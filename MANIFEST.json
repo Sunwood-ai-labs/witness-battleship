@@ -1,20 +1,40 @@
 {
-  "version": "public-distribution-20261101-v2",
+  "version": "public-distribution-20261101-v3",
   "files": [
     {
       "path": ".gitattributes",
-      "bytes": 40,
-      "sha256": "a20b5ee1b053bcca4977a48d07709a7e761b036f7c6db3c14b7a0f655a775d9f"
+      "bytes": 74,
+      "sha256": "3f24aa1a65d9691000958693e146c1ce755ba5d35203b551c6123633a7989a77"
+    },
+    {
+      "path": ".github/workflows/verify.yml",
+      "bytes": 934,
+      "sha256": "1a57d8f97930ee29ee4e7aeb8f818e4c7bb2dd36f722341033b5fb959d2378bd"
     },
     {
       "path": ".gitignore",
-      "bytes": 77,
-      "sha256": "31469dfe793cc8c34faf6d6b5f6c609a0b0b03941c1ea07a23b68cd0f5185927"
+      "bytes": 144,
+      "sha256": "0d85b46789ca256eefe2392fdf24bf9cfae762a2a5f08de0d09402f3ff4b879b"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1097,
+      "sha256": "1dce07e03b172ea2f1a76eb713bb3c1267193d71f973151d3223febee6d03d04"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 800,
+      "sha256": "8c293362bc69b75f6917ad71a7b6afe0611e7bc3264dd2f63947e2308fc82034"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 2409,
+      "sha256": "dd7abc654027a225dd1b62bf1d4c746e4101cbb663cb7d741ca4533082166ee7"
     },
     {
       "path": "README.md",
-      "bytes": 2618,
-      "sha256": "7ff9adb91ac0954c759ba754ca06e9b8870e63689204bcd715a29a0d0ca170b1"
+      "bytes": 12840,
+      "sha256": "1f5fa39d47c357345a74485ee17ef341b8b610a15912e89e200c00d37f143869"
     },
     {
       "path": "cad/WITNESS_V102_PUBLIC.FCStd",
@@ -107,9 +127,19 @@
       "sha256": "15c0b85a3e627b92e8a2667827cf2140835449695c5d53af6fd98199d0bc3c6c"
     },
     {
+      "path": "docs/GETTING_STARTED.md",
+      "bytes": 3885,
+      "sha256": "1d1d35e652de20664fd8c03de2fbb512011634ff760da4e1bc70cc9d1e2e2c3a"
+    },
+    {
+      "path": "docs/MODEL_GUIDE.md",
+      "bytes": 3598,
+      "sha256": "d8188c0c3807976dc492bd7c5ffe01a04677780fcfe14b86d4ed04d03cead206"
+    },
+    {
       "path": "docs/VERIFICATION.md",
-      "bytes": 1552,
-      "sha256": "10672f443a07848a00b9cf792000802273ffa774163a2a535e4b8b584e9b31a5"
+      "bytes": 5328,
+      "sha256": "e51d974cf21c378a89f41ddde392c0dfd9ced7f2df700d2c078cc44b08a73d5a"
     },
     {
       "path": "docs/VERSIONS.md",
@@ -252,19 +282,39 @@
       "sha256": "e512778692582cbd67e66b5b160dc5d9bd41ef338779da0f4cb4b99137cbfd7a"
     },
     {
+      "path": "scripts/check_links.py",
+      "bytes": 1582,
+      "sha256": "f7c802792a794922ce591ad335116ef7b04eb976c0d837cd0577f87c1b99388a"
+    },
+    {
+      "path": "scripts/distribution.py",
+      "bytes": 2798,
+      "sha256": "4cf1d55b19304104855a889fbaad7efe15e00ce454702016a570808698b37c32"
+    },
+    {
       "path": "scripts/restore_v62.py",
-      "bytes": 1151,
-      "sha256": "32161f0b60b619cdd9500801a514937f15f5b5156b9443d3c59010812e13513a"
+      "bytes": 3337,
+      "sha256": "24adb868eba2163fd1866f3fc00c0c10c0ca150ec36f07b8c803e000fbd36aae"
+    },
+    {
+      "path": "scripts/update_manifest.py",
+      "bytes": 1919,
+      "sha256": "826e95f8acf5d9a4836c7c97f6ba727e6eaec728624520030ab0a9a7a7451f31"
     },
     {
       "path": "scripts/verify_files.py",
-      "bytes": 491,
-      "sha256": "6eef6477f35f1403ea54cee68b68363704611a1d9378ac7fa4c372810a4034dc"
+      "bytes": 581,
+      "sha256": "c8ace6f5fcd6f8e087bab1faedfa7d9066d60ec0373723b42a542e9b575a33ce"
     },
     {
       "path": "scripts/verify_geometry.py",
-      "bytes": 827,
-      "sha256": "acc288986c0bb7ec52531b896788ca2e6f027b8bb262bcfc6160fddadec2d78f"
+      "bytes": 1011,
+      "sha256": "7b1beba8b47db8ab2dd2cfccbdf17a5a03fa680ff64001f8dcc980a6660d4d3b"
+    },
+    {
+      "path": "tests/test_distribution.py",
+      "bytes": 8557,
+      "sha256": "0f8609edf68d8461ffa78fb8208e3c425d059c89f0b0769bf5e7aa92db650e01"
     }
   ]
 }

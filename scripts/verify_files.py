@@ -1,11 +1,17 @@
-"""Verify the public distribution without network access or mutation."""
+"""Verify public distribution size and SHA-256, including under python -O."""
 from pathlib import Path
-import hashlib,json
-root=Path(__file__).resolve().parents[1]
-manifest=json.loads((root/'MANIFEST.json').read_text())
-for item in manifest['files']:
-    p=root/item['path']
-    assert p.is_file(),item['path']
-    assert p.stat().st_size==item['bytes'],item['path']
-    assert hashlib.sha256(p.read_bytes()).hexdigest()==item['sha256'],item['path']
-print('PASS:',len(manifest['files']),'files')
+import argparse
+from distribution import ValidationError, verify_manifest
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
+    args = parser.parse_args()
+    try:
+        count = verify_manifest(args.root)
+    except ValidationError as exc:
+        parser.exit(1, 'FAIL: ' + str(exc) + '\n')
+    print('PASS:', count, 'files')
+
+if __name__ == '__main__':
+    main()

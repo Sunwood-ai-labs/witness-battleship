@@ -1,3 +1,5 @@
+* text=auto eol=lf
 *.FCStd binary
 *.png binary
 *.brp -text
+*.part* binary

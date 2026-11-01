@@ -1,0 +1,33 @@
+name: Verify public CAD distribution
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  distribution:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - name: Checkout exact revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Test normal and failure paths
+        run: python -m unittest discover -s tests -v
+      - name: Verify manifest generation and file contents
+        run: |
+          python scripts/update_manifest.py --check
+          python scripts/verify_files.py
+      - name: Check local documentation and image links
+        run: python scripts/check_links.py
+      - name: Reconstruct and validate the complete V62 native
+        run: python scripts/restore_v62.py
