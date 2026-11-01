@@ -28,6 +28,8 @@ jobs:
           python scripts/update_manifest.py --check
           python scripts/verify_files.py
       - name: Check local documentation and image links
-        run: python scripts/check_links.py
+        run: |
+          python scripts/check_links.py
+          python scripts/check_site.py
       - name: Reconstruct and validate the complete V62 native
         run: python scripts/restore_v62.py

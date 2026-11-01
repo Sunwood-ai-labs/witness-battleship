@@ -1,5 +1,9 @@
 # モデルガイド
 
+[English](guide/model-guide.md) | [日本語ガイド](ja/guide/model-guide.md) · [ガイド一覧](ja/guide/index.md)
+
+> この従来URLは維持しています。英日共通ナビゲーションは上記ガイドを参照してください。
+
 [READMEへ戻る](../README.md)
 
 ## V62：全体の基準

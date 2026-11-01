@@ -1,187 +1,213 @@
-# WITNESS — 近未来戦艦 CAD
+# WITNESS — Near-future battleship CAD
 
 [![Verify public CAD distribution](https://github.com/Sunwood-ai-labs/witness-battleship/actions/workflows/verify.yml/badge.svg)](https://github.com/Sunwood-ai-labs/witness-battleship/actions/workflows/verify.yml)
 
-FreeCADで制作している架空の近未来艦 **WITNESS** の全体基準モデルと、船殻の限定区画を比較するCAD・画像セットです。
 
-**全体を見るなら V62、2区画の凹部形状を調べるなら V102。両者は統合済みの同一モデルではありません。** 実船の設計・製造・強度・水密認証用ではありません。
+**English** | [日本語](README.ja.md)
 
-![WITNESS 全体の比較後画像。白い船体、暗色の艦橋、船側の窓列](images/WHOLE_AFTER.png)
+[Guide](docs/guide/index.md) · [GitHub](https://github.com/Sunwood-ai-labs/witness-battleship) · [Project site (deployment pending)](https://sunwood-ai-labs.github.io/witness-battleship/)
 
-*全体比較の After。船側の局所意匠が、艦全体のシルエットの中でどう見えるかを確認できます。この全景は比較用画像であり、V102単体に全艦の部品が入っていることを示すものではありません。*
+A FreeCAD model of the fictional near-future ship **WITNESS**, combining a whole-ship baseline with CAD and images for a limited hull-bay design comparison.
 
-## 目次
+**Open V62 for the whole-ship baseline; open V102 to inspect two recessed bays. They are not one integrated model.** This is not a real-vessel design, manufacturing package, or structural/watertight certification.
 
-- [スクリーンショット](#スクリーンショット)
-- [クイックスタート](#クイックスタート)
-- [モデル構成](#モデル構成)
-- [FreeCADでの閲覧と編集](#freecadでの閲覧と編集)
-- [検証](#検証)
-- [制限と公開範囲](#制限と公開範囲)
-- [トラブルシュート](#トラブルシュート)
-- [ドキュメントと参加方法](#ドキュメントと参加方法)
-- [配布の扱い](#配布の扱い)
+![WITNESS whole-view comparison after the local changes](images/WHOLE_AFTER.png)
 
-## スクリーンショット
+*The After view shows local hull styling in the context of the ship's silhouette. It is a comparison image, not evidence that the V102 file contains the complete ship assembly.*
 
-画像をクリックすると元の解像度で確認できます。Before / After は意匠比較であり、基準版への採用を意味しません。
+<a id="contents"></a>
 
-### 全体 — シルエットを保った局所比較
+## 🧭 Contents
 
-| Before | After |
-| :---: | :---: |
-| [![WITNESS 全体 Before](images/WHOLE_BEFORE.png)](images/WHOLE_BEFORE.png) | [![WITNESS 全体 After](images/WHOLE_AFTER.png)](images/WHOLE_AFTER.png) |
+- [Screenshots](#screenshots)
+- [Quick start](#quick-start)
+- [Model structure](#model-structure)
+- [Viewing and editing in FreeCAD](#viewing-and-editing)
+- [Verification](#verification)
+- [Limits and public scope](#limits)
+- [Troubleshooting](#troubleshooting)
+- [Documentation and contributions](#documentation)
+- [Distribution and rights](#rights)
 
-**見どころ：** 同じ向きの全景で、画面左側の船側窓列と周囲の陰影を比較してください。艦橋・甲板・船首を含む全体の姿に対して、変更は局所的です。細かな凹みは下の接写が分かりやすくなっています。
+<a id="screenshots"></a>
 
-### BAY0 — 5枚の暖色パネルを囲む凹部
+## 🖼️ Screenshots
 
-| Before | After |
-| :---: | :---: |
-| [![BAY0 Before：暗色の帯に5枚の暖色パネル](images/BAY0_BEFORE.png)](images/BAY0_BEFORE.png) | [![BAY0 After：5枚のパネルを囲む船殻の凹部](images/BAY0_AFTER.png)](images/BAY0_AFTER.png) |
+Select an image to inspect the original resolution. Before / After means a design comparison, **not adoption into the baseline**.
 
-**見どころ：** Beforeの外側に見える暗色帯とパネルに対し、Afterでは船殻の開口縁、下側の明るい斜面、奥にある暗色面を読み取れます。上方の水色ラインを目印に、パネル周囲の奥行きと影の変化を比べてください。
-
-### BAY1 — 隣接する6枚のパネル列
+### Whole ship — local changes within the silhouette
 
 | Before | After |
 | :---: | :---: |
-| [![BAY1 Before：手すり下の6枚の暖色パネル](images/BAY1_BEFORE.png)](images/BAY1_BEFORE.png) | [![BAY1 After：6枚のパネルを囲む凹部と縁](images/BAY1_AFTER.png)](images/BAY1_AFTER.png) |
+| [![Whole ship Before](images/WHOLE_BEFORE.png)](images/WHOLE_BEFORE.png) | [![Whole ship After](images/WHOLE_AFTER.png)](images/WHOLE_AFTER.png) |
 
-**見どころ：** 画面上の甲板手すりと、6枚のパネル列の位置関係に注目してください。Afterでは外周の明るい縁と暗い背面が分かれ、平面的な貼り付け表現から凹部のある見え方へ変化しています。
+**Look for:** the window rows toward the left of the image and their surrounding shadows. The bridge, deck, and bow provide context; the changes are local. Use the close-ups below to read the recesses more clearly.
 
-### D4 — 生活・医療区画のフロアマップ
+### BAY0 — a recess around five warm-colored panels
 
-[![D4フロアマップ：食堂、厨房、共用室、医療室、処置室、生活支援などの配置](images/D4_FLOOR_MAP.png)](images/D4_FLOOR_MAP.png)
+| Before | After |
+| :---: | :---: |
+| [![BAY0 Before: five warm panels on a dark strip](images/BAY0_BEFORE.png)](images/BAY0_BEFORE.png) | [![BAY0 After: recessed panel row and hull edges](images/BAY0_AFTER.png)](images/BAY0_AFTER.png) |
 
-**見どころ：** 上から見た正投影で、左が船尾、右が船首。番号1〜7で食堂・厨房・共用室・医療室・処置室・生活支援・元CADのUAV区画を案内しています。家具の密度や区画間の余白も確認できます。
+**Look for:** the opening edge, bright lower slope, and dark recessed back in After, compared with the outward-looking strip and panels in Before. The cyan line above the bay provides a useful visual reference for depth and shadow changes.
 
-**画像の範囲：** D4床から2.02 m（Z=10.020 m）の水平断面を使った表示用合成です。画像内の注記は V62 と後続の局所版の反映を示しますが、それらすべてをこのリポジトリのV62へ統合したという意味ではありません。天井・切断面より上の部品は非表示です。
+### BAY1 — the adjacent six-panel row
 
-### D9 — 上部艦橋のフロアマップ
+| Before | After |
+| :---: | :---: |
+| [![BAY1 Before: six warm panels below the deck railing](images/BAY1_BEFORE.png)](images/BAY1_BEFORE.png) | [![BAY1 After: recessed six-panel row](images/BAY1_AFTER.png)](images/BAY1_AFTER.png) |
 
-[![D9フロアマップ：上部艦橋と同じ高さに見える周辺形状](images/D9_FLOOR_MAP.png)](images/D9_FLOOR_MAP.png)
+**Look for:** the relationship between the deck railing above and the six-panel row. In After, the light perimeter and dark back separate visually, changing the appearance from a surface-mounted detail to a recess.
 
-**見どころ：** 番号1が上部艦橋の室内範囲です。周辺には同じ高さにある可視形状も残されています。大きな暗色部分全体を室内と解釈しないでください。
+### D4 — living and medical spaces
 
-**画像の範囲：** D9床から2.02 m（Z=28.920 m）の水平断面、V75の確定形状を使った表示用合成です。天井は非表示で、空白を新規の形状で埋めていません。D4・D9とも、全艦CADの統合完了や設計寸法・安全性の保証を示す図ではありません。
+[![D4 floor map: mess, galley, common room, medical rooms, treatment and life-support spaces](images/D4_FLOOR_MAP.png)](images/D4_FLOOR_MAP.png)
 
-## クイックスタート
+**Look for:** a top-down orthographic view with stern to the left and bow to the right. Labels 1–7 identify the mess, galley, common room, medical rooms, treatment room, life-support area, and the original CAD's UAV zone. Furniture density and the spaces between zones remain visible.
 
-必要なものは **Git、Python 3、FreeCAD** です。公開FCStdは **FreeCAD 1.0R** で新規に開く検証を実施済み。他のFreeCADバージョンでの互換性は未検証です。検証・復元用Pythonスクリプトと、FreeCAD用の形状検証は実行環境が異なります。
+**Image scope:** a display composite using a horizontal cut 2.02 m above the D4 floor (Z=10.020 m). Its annotations refer to V62 and later local versions; they do not mean all those versions have been integrated into the distributed V62. Ceilings and objects above the cut are hidden.
+
+### D9 — upper bridge
+
+[![D9 floor map: upper bridge and other visible geometry at the same elevation](images/D9_FLOOR_MAP.png)](images/D9_FLOOR_MAP.png)
+
+**Look for:** label 1 marks the upper-bridge interior. Other visible geometry at the same elevation remains in the image. Do not interpret the entire large dark region as interior space.
+
+**Image scope:** a display composite using confirmed V75 geometry and a cut 2.02 m above the D9 floor (Z=28.920 m). Ceilings are hidden, and empty areas have not been filled with invented geometry. Neither floor map certifies a fully integrated ship, design dimensions, or safety.
+
+<a id="quick-start"></a>
+
+## 🚀 Quick start
+
+You need **Git, Python 3, and FreeCAD**. The public FCStd files were freshly opened in **FreeCAD 1.0R**; other FreeCAD versions are unverified. Standard-Python checks and FreeCAD geometry checks use different execution environments.
 
 ```sh
 git clone https://github.com/Sunwood-ai-labs/witness-battleship.git
 cd witness-battleship
-python scripts/verify_files.py
+uv run python scripts/verify_files.py
 ```
 
-環境によって `python` を `python3` に読み替えてください。
+The examples prefer `uv`. With an existing Python 3 installation, replace `uv run python` with `python` or `python3` as appropriate.
 
-### まず限定区画を開く
+### Open the limited comparison first
 
-FreeCADの「ファイル → 開く」で `cad/WITNESS_V102_PUBLIC.FCStd` を選びます。V102は同梱済みで、復元不要です。**船殻1部品と付属形状13部品、計14部品＋1グループ**の比較モデルです。
+In FreeCAD, choose **File → Open** and select `cad/WITNESS_V102_PUBLIC.FCStd`. It is included directly; no restoration is required. It contains **one hull and 13 attached shapes: 14 parts plus one group**.
 
-### 艦全体の基準モデルを開く
+### Open the whole-ship baseline
 
 ```sh
-python scripts/restore_v62.py
+uv run python scripts/restore_v62.py
 ```
 
-`cad/v62_parts/` の **16個の分割圧縮ファイル**から `cad/WITNESS_V62_PUBLIC.FCStd` を復元します。スクリプトは各片・結合した圧縮ファイル・復元FCStdのSHA-256を確認し、既存の出力を上書きしません。復元したFCStdをFreeCADで開いてください。V62は **35,761オブジェクト**の大きなモデルです。
+This restores `cad/WITNESS_V62_PUBLIC.FCStd` from **16 compressed fragments** in `cad/v62_parts/`. The script checks SHA-256 hashes for every fragment, the combined archive, and the restored FCStd. It refuses to overwrite an existing output. Open the restored file in FreeCAD; V62 is a large model with **35,761 objects**.
 
-詳細な手順と保存時の注意は [はじめて開く・編集する](docs/GETTING_STARTED.md) を参照してください。
+See [Getting started](docs/guide/getting-started.md) for the full workflow and safe editing practices.
 
-## モデル構成
+<a id="model-structure"></a>
 
-| 対象 | 内容・役割 | 状態 |
+## 🧩 Model structure
+
+| Item | Role | Status |
 | --- | --- | --- |
-| V62 | 艦全体の基準スナップショット、35,761オブジェクト | 16片から復元。後の局所追加をすべて含む最新版全艦ではない |
-| V102 | 1つの船殻に2切削を適用した累積比較、14部品＋1グループ | 全艦組立ではない |
-| 区画比較 | 14区画中2区画を個別検証 | 残り12区画は未完 |
-| 基準版への採用 | 比較案を基準へ取り込んだ数 | **0区画** |
-| D4 / D9 | 局所版を反映したフロアマップ画像 | 表示用合成。対応する統合済み全艦モデルの配布ではない |
+| V62 | Whole-ship baseline snapshot, 35,761 objects | Restored from 16 fragments; not a latest ship containing every later local addition |
+| V102 | Cumulative comparison applying two cuts to one hull; 14 parts plus one group | Not a full ship assembly |
+| Bay comparison | Two of 14 bays individually verified | Remaining 12 incomplete |
+| Baseline adoption | Compared bays incorporated into the baseline | **Zero bays** |
+| D4 / D9 | Floor-map images incorporating local versions | Display composites, not a distributed integrated ship model |
 
 ```text
 cad/
-  WITNESS_V102_PUBLIC.FCStd   限定区画の比較モデル
-  v62_parts/                 V62の16片と復元情報 PARTS.json
+  WITNESS_V102_PUBLIC.FCStd   Limited bay comparison
+  v62_parts/                 16 V62 fragments and PARTS.json
 geometry/
-  v102/                      V102の14部品BRep
-  recipe/                    元船殻、2つの別案船殻、2つの除去領域
-images/                      全体・BAY0・BAY1比較とD4・D9マップ（8枚）
-scripts/                     復元・検証・マニフェスト管理
-tests/                       Pythonユニットテスト
-docs/                        操作・モデル・検証・版の説明
+  v102/                      14 V102 part BReps
+  recipe/                    Base hull, two alternatives, two removal regions
+images/                      Whole/BAY0/BAY1 comparisons and D4/D9 maps (8 images)
+scripts/                     Restoration, verification, manifest maintenance
+tests/                       Python unit tests
+docs/                        Bilingual guides and retained original documentation
 ```
 
-V100とV101は、それぞれ全船殻を含む排他的な別案です。V102では船殻を2つ重ねず、**除去領域だけを元船殻から引きます**。
+V100 and V101 are mutually exclusive alternatives, each containing an entire hull. V102 **subtracts their removal regions from the base hull** instead of overlaying two hulls.
 
 ```text
-V102の船殻 = V62の元船殻 - (V62の元船殻 - V100の別案船殻)
-                         - (V62の元船殻 - V101の別案船殻)
+V102 hull = V62 base hull - (V62 base hull - V100 alternative hull)
+                         - (V62 base hull - V101 alternative hull)
 ```
 
-部品一覧と比較の読み方は [モデルガイド](docs/MODEL_GUIDE.md)、版ごとの位置付けは [版と公開範囲](docs/VERSIONS.md) を参照してください。
+See the [Model guide](docs/guide/model-guide.md) for part details and [Versions and public scope](docs/guide/versions.md) for the meaning of each version.
 
-## FreeCADでの閲覧と編集
+<a id="viewing-and-editing"></a>
 
-1. まずV62またはV102を**単独で**開き、ツリーと全体表示を確認します。
-2. 編集前に「名前を付けて保存」で作業コピーを作ります。公開配布ファイルは照合用に残してください。
-3. 対象部品をツリーから選び、表示・非表示を切り替えて局所形状を確認します。
-4. 形状の変更はコピー上で行い、保存後に閉じて開き直し、意図した表示と形状が残るか確認します。
+## 🛠️ Viewing and editing in FreeCAD
 
-FCStdで開けることと、すべての形状に完全なパラメトリック編集履歴があることは同義ではありません。BRepは形状交換・検証用で、元の編集履歴や表示設定の完全な代替ではありません。**V62とV102を重ねて「統合版」と扱わないでください。**
+1. Open V62 or V102 **on its own** and inspect the model tree and overall view.
+2. Before editing, use **Save As** to create a working copy. Keep distributed files for comparison and integrity checks.
+3. Select components in the tree and toggle visibility to inspect the local geometry.
+4. Edit the copy, save it, close it, and open it afresh to check that the intended geometry and display state remain.
 
-## 検証
+An editable FCStd document does not imply a complete parametric history for every shape. BRep files support shape exchange and verification; they do not replace the original editing history or display settings. **Do not overlay V62 and V102 and call the result an integrated version.**
 
-リポジトリのルートで実行します。
+<a id="verification"></a>
+
+## ✅ Verification
+
+Run from the repository root:
 
 ```sh
-python scripts/verify_files.py
-python scripts/check_links.py
-python -m unittest discover -s tests -v
-python scripts/update_manifest.py --check
+uv run python scripts/verify_files.py
+uv run python scripts/check_links.py
+uv run python -m unittest discover -s tests -v
+uv run python scripts/update_manifest.py --check
 ```
 
-- ファイル検証：配布ファイルのサイズ・SHA-256を照合します。
-- リンク検証：ドキュメント内のローカル参照を確認します。
-- テスト：復元・検証などのスクリプトの振る舞いを確認します。
-- マニフェスト検証：記録と公開ファイルの整合を確認します。通常の閲覧者が記録を更新する必要はありません。
+- File verification compares distributed file sizes and SHA-256 hashes.
+- Link verification checks local documentation references, not external URLs or page anchors.
+- Tests check the behavior of restoration and verification utilities.
+- Manifest checking compares recorded metadata with the public files; readers do not need to update it.
 
-形状検証は別途、**FreeCADのPython環境**で `scripts/verify_geometry.py` を実行してください。14部品が有効な単一ソリッドであること、2つの除去領域の非重複、累積切削レシピとの体積差を確認します。実行方法と検証の境界は [検証記録](docs/VERIFICATION.md) にまとめています。
+Separately, run `scripts/verify_geometry.py` in **FreeCAD's Python environment**. It checks 14 valid single-solid parts, non-overlapping removal regions, and the volume difference against the cumulative two-cut recipe. See [Verification](docs/guide/verification.md) for instructions and limits.
 
-## 制限と公開範囲
+<a id="limits"></a>
 
-- 区画の検証は **2/14**、採用は **0**。この数から全艦再現率を算出しません。
-- 画像は比較・配置理解用です。画像の印象だけで寸法、部品の統合状態、構造安全性を判断しないでください。
-- すべての過去版、生成資料、編集履歴を含む完全アーカイブではありません。
-- 公開FCStdは原本の複製から非公開メタデータを除いた派生版です。原本は変更していません。
-- 全艦の動作、強度、水密、製造適合性、安全認証は検証対象外です。
-- FreeCAD 1.0R以外での動作、必要メモリの一律の下限、全OSでの動作は保証していません。
+## 📐 Limits and public scope
 
-## トラブルシュート
+- **2/14 bays** compared and verified; **zero adopted**. These counts do not measure whole-ship completeness.
+- Images support visual comparison and spatial understanding, not dimensional, integration, or structural guarantees.
+- This is not a complete archive of all past versions, generation sources, or editing history.
+- Public FCStd files are derivatives of copies with private metadata removed. Source originals remain unchanged.
+- Whole-ship operation, strength, watertightness, manufacturing suitability, and safety certification are outside scope.
+- Compatibility beyond FreeCAD 1.0R, a universal minimum-memory requirement, and operation on every OS are not guaranteed.
 
-| 症状 | 確認すること |
+<a id="troubleshooting"></a>
+
+## 🔧 Troubleshooting
+
+| Symptom | What to check |
 | --- | --- |
-| V62のFCStdが見つからない | `python scripts/restore_v62.py` を実行。16片がすべて取得されているか確認 |
-| 復元で「既存の出力」があると止まる | 上書き防止の正常動作。編集中のファイルを退避し、既存ファイルの由来を確認してから再実行 |
-| サイズ・SHA-256不一致 | 作業を止め、欠損または意図しない変更を確認。失敗を隠すためにマニフェストを更新しない |
-| `No module named FreeCAD` / `Part` | 通常のPythonではなくFreeCADのPython環境で形状検証を実行 |
-| V62を開くのに時間がかかる | 35,761オブジェクトのモデルです。他の大きな文書を閉じ、まずV102を単独で確認 |
-| V102に艦橋や砲塔などがない | 全艦組立ではなく、船殻＋13付属形状の比較モデルなので仕様どおり |
-| 形状が二重・ちらついて見える | 基準版と比較案を同じ表示に重ねていないか確認 |
-| PNGとCADの見え方が違う | 画像は比較・表示用合成を含みます。版、表示状態、カメラ、照明の違いを切り分ける |
+| V62 FCStd is missing | Run `uv run python scripts/restore_v62.py`; confirm all 16 fragments were downloaded |
+| Restoration stops because output exists | Intended overwrite protection. Preserve edited work and identify the existing file before retrying |
+| Size or SHA-256 mismatch | Stop and investigate missing data or unintended edits. Do not regenerate the manifest merely to hide the failure |
+| `No module named FreeCAD` / `Part` | Run geometry checks in FreeCAD's Python environment, not ordinary Python |
+| V62 takes time to open | It has 35,761 objects. Close other large documents and try V102 alone first |
+| V102 has no complete bridge or turrets | Expected: it is a hull plus 13 attached shapes, not a full ship assembly |
+| Double surfaces or flickering | Check that baseline and alternative hulls are not overlaid |
+| CAD looks different from a PNG | Images include comparison/display composites. Check version, visibility, camera, and lighting separately |
 
-## ドキュメントと参加方法
+<a id="documentation"></a>
 
-- [はじめて開く・編集する](docs/GETTING_STARTED.md)：取得、復元、FreeCADでの確認と保存
-- [モデルガイド](docs/MODEL_GUIDE.md)：V102の部品と切削レシピ、画像との関係
-- [検証記録](docs/VERIFICATION.md)：確認済み事項と検証対象外
-- [版と公開範囲](docs/VERSIONS.md)：V62 / V100 / V101 / V102の位置付け
-- [変更提案・不具合報告](CONTRIBUTING.md)：再現に必要な情報と提出前の確認
-- [変更履歴](CHANGELOG.md)：公開セットの変更
+## 📚 Documentation and contributions
 
-## 配布の扱い
+- [Guide index](docs/guide/index.md): English documentation and language switches
+- [Getting started](docs/guide/getting-started.md): download, restore, open, and save safely
+- [Model guide](docs/guide/model-guide.md): V102 parts, recipe, and image interpretation
+- [Verification](docs/guide/verification.md): checked properties and exclusions
+- [Versions and public scope](docs/guide/versions.md): V62 / V100 / V101 / V102
+- [Contribution guide (Japanese)](CONTRIBUTING.md): reporting and pre-submission checks
+- [Changelog (Japanese)](CHANGELOG.md): public-set changes
 
-公開リポジトリ化はオープンソースライセンスの付与を意味しません。この公開準備では新たなライセンスを設定していません。再利用・再配布等の権利は、公開されていることだけから判断しないでください。FreeCAD等の依存ソフトは同梱せず、それぞれの公式配布元を利用してください。
+<a id="rights"></a>
+
+## 📜 Distribution and rights
+
+Publishing a repository is not an open-source license grant. No new license has been assigned in this preparation. Do not infer reuse or redistribution rights merely from public availability. Dependencies such as FreeCAD are not bundled; obtain them from their official distributors.

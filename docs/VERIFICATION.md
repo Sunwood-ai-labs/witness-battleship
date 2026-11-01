@@ -1,5 +1,9 @@
 # 公開セットの検証
 
+[English](guide/verification.md) | [日本語ガイド](ja/guide/verification.md) · [ガイド一覧](ja/guide/index.md)
+
+> この従来URLは維持しています。英日共通ナビゲーションは上記ガイドを参照してください。
+
 [READMEへ戻る](../README.md)
 
 ## 公開準備時点の確認

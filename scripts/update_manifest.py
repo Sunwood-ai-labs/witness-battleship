@@ -5,8 +5,8 @@ import json
 from distribution import sha256_file
 
 ROOT = Path(__file__).resolve().parents[1]
-ALLOWED_DIRS = {'cad', 'docs', 'geometry', 'images', 'scripts', 'tests', '.github'}
-ALLOWED_ROOT = {'README.md', 'CONTRIBUTING.md', 'CHANGELOG.md', 'AGENTS.md', '.gitignore', '.gitattributes'}
+ALLOWED_DIRS = {'cad', 'docs', 'geometry', 'images', 'scripts', 'tests', '.github', 'site'}
+ALLOWED_ROOT = {'README.md', 'README.ja.md', 'CONTRIBUTING.md', 'CHANGELOG.md', 'AGENTS.md', '.gitignore', '.gitattributes'}
 
 def is_generated_native(relative_path):
     return relative_path.as_posix() == 'cad/WITNESS_V62_PUBLIC.FCStd'
@@ -27,7 +27,7 @@ def build(root):
             continue
         rows.append({'path':rel.as_posix(), 'bytes':p.stat().st_size, 'sha256':sha256_file(p)})
     rows.sort(key=lambda row: row['path'])
-    return {'version':'public-distribution-20261101-v3', 'files':rows}
+    return {'version':'public-distribution-20261101-v4', 'files':rows}
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)

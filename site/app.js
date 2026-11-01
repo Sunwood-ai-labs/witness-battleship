@@ -1,0 +1,8 @@
+'use strict';
+const comparison=document.querySelector('.comparison');
+const slider=document.querySelector('#split');
+slider.addEventListener('input',()=>{comparison.style.setProperty('--split',`${slider.value}%`);document.querySelector('#split-value').textContent=`${slider.value}%`;});
+for(const button of document.querySelectorAll('[data-view]'))button.addEventListener('click',()=>{for(const b of document.querySelectorAll('[data-view]'))b.setAttribute('aria-pressed',String(b===button));const view=button.dataset.view;comparison.querySelector('.before').src=`assets/${view}_before.webp`;comparison.querySelector('.after').src=`assets/${view}_after.webp`;comparison.querySelector('.before').alt=`${button.textContent} — Before`;comparison.querySelector('.after').alt=`${button.textContent} — After`;document.querySelector('#compare-description').textContent=button.dataset.description;});
+const dialog=document.querySelector('#viewer');let opener;
+for(const button of document.querySelectorAll('[data-image]'))button.addEventListener('click',()=>{opener=button;dialog.querySelector('img').src=button.dataset.image;dialog.querySelector('img').alt=button.dataset.alt;dialog.querySelector('#viewer-title').textContent=button.dataset.alt;dialog.querySelector('#original').href=button.dataset.original;dialog.showModal();});
+dialog.querySelector('button').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});dialog.addEventListener('close',()=>opener?.focus());

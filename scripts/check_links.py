@@ -10,7 +10,7 @@ def check_links(root):
     root = Path(root).resolve()
     checked, errors = 0, []
     for source in sorted(root.rglob('*.md')):
-        if '.git' in source.parts:
+        if any(part in {'.git', '.agents', 'node_modules', '.venv'} for part in source.parts):
             continue
         for match in LINK.finditer(source.read_text(encoding='utf-8')):
             value = (match.group(1) or match.group(2)).split()[0].strip('<>')
