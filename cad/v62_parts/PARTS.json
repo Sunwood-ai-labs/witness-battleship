@@ -1,0 +1,89 @@
+{
+  "archive_bytes": 65670301,
+  "archive_sha256": "9d218d2837e3ad31b56f0cac677b4d0affa000baae0fdd1f820d9f2485420cc2",
+  "output_name": "WITNESS_V62_PUBLIC.FCStd",
+  "output_bytes": 85981279,
+  "output_sha256": "07a8187a1ed45542aa0d23f32acc8fd55529b6a5b5c249d1535a35b2542e99ed",
+  "parts": [
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part001",
+      "bytes": 4194304,
+      "sha256": "4fd1f64ac2f75463336f1da2a9bfe6fe960b0bc7ceeb58822f50e99aa04f44e0"
+    },
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part002",
+      "bytes": 4194304,
+      "sha256": "cfe01d18b9feb28c5e8995b406cc7d5b2ce3edeb82fd5b575f41f932f0e0d687"
+    },
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part003",
+      "bytes": 4194304,
+      "sha256": "ae7eee95479756caeb238dfa031017dabd10da0ca9de7ef1b3b622018e0a0529"
+    },
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part004",
+      "bytes": 4194304,
+      "sha256": "664c33249bf2ff2dde07ecefaba3952b90473b56fe48d882a7cb0127f06f5786"
+    },
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part005",
+      "bytes": 4194304,
+      "sha256": "dd05004db262404072be0406196470c5a20c0acc47c004e5a88da19a1b8f5b8c"
+    },
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part006",
+      "bytes": 4194304,
+      "sha256": "ef6e18843472fc56c40168a66a5e588ad90a552114af0b6248c536c2c8046eaf"
+    },
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part007",
+      "bytes": 4194304,
+      "sha256": "fdd0116296855e8fbfb4f0dc14c7c46a4503a4070303dbfa7dbe9b3333b21866"
+    },
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part008",
+      "bytes": 4194304,
+      "sha256": "8fa427d969260c1a9050e71fbeee9882585f074765a1b5a0dd58fb06b8562dfb"
+    },
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part009",
+      "bytes": 4194304,
+      "sha256": "fabf1e18eaa2777cec9a9313a801a3752a3aac2055de43fbdf71b4beb21e4813"
+    },
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part010",
+      "bytes": 4194304,
+      "sha256": "44e66bdb0f6f13bc2916acba1ccf2122662f07a1d0063e1a2e1e20fb74a3c143"
+    },
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part011",
+      "bytes": 4194304,
+      "sha256": "b49bb2a9d541698a02404a2202fc33e0d2f301bec8d5f09f156d7a26b36a0a76"
+    },
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part012",
+      "bytes": 4194304,
+      "sha256": "370fdd9a083a05f58bcd442d4c553b137072aba1794bae00f9ce8e95505a67c1"
+    },
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part013",
+      "bytes": 4194304,
+      "sha256": "81c3a75107a3ea0eb43211ab047400c6ca1d71d78d4b2cdd218bd402324f2a34"
+    },
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part014",
+      "bytes": 4194304,
+      "sha256": "7cd1a738f29ec09855610c61808d289e1a984803a3ed0619394c00e3ab8e2dcf"
+    },
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part015",
+      "bytes": 4194304,
+      "sha256": "dbf8ed3f4aa294a5b14492388e817199edfec3f283de444cee5077c1c77e78d3"
+    },
+    {
+      "name": "V62_PUBLIC_NATIVE.zip.part016",
+      "bytes": 2755741,
+      "sha256": "15c0b85a3e627b92e8a2667827cf2140835449695c5d53af6fd98199d0bc3c6c"
+    }
+  ]
+}
