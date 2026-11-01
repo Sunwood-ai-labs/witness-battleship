@@ -458,8 +458,8 @@
     },
     {
       "path": "site/styles.css",
-      "bytes": 10497,
-      "sha256": "990c5dfdf56d6c25e31ac5673c992c12ef81f457384f74ceb12faf0087d29110"
+      "bytes": 10521,
+      "sha256": "6ee4e02c4e38167378e3f04cef801c80401c7d7d30355ab6c9f2cd3254b42049"
     },
     {
       "path": "tests/test_distribution.py",
@@ -468,8 +468,8 @@
     },
     {
       "path": "tests/test_site.py",
-      "bytes": 5237,
-      "sha256": "f23c3adb805d12a74befe576f04627ef516d2fb4785973322dc6ccb18bffbaa2"
+      "bytes": 5665,
+      "sha256": "1e6ea732a8e9f5c7c9951efafdb521ab553bee55139dd78d177ae8367bdbb6af"
     }
   ]
 }

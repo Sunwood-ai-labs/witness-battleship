@@ -104,6 +104,13 @@ class SiteTests(unittest.TestCase):
             self.write('index.html', document('<img src="x.svg" alt="Diagram">'))
             self.assertIn('escapes site artifact', self.errors())
 
+    def test_responsive_image_height_overrides_html_dimensions(self):
+        # Width/height HTML attributes otherwise force 1012px-tall mobile cards.
+        css = (Path(__file__).resolve().parents[1] / 'site/styles.css').read_text(encoding='utf-8')
+        for selector in ['.hero-image>img', '.gallery img']:
+            rule = css.split(selector + '{', 1)[1].split('}', 1)[0]
+            self.assertIn('height:auto', rule)
+
     def test_missing_site(self):
         count, errors = check_site(self.root / 'missing')
         self.assertEqual(count, 0)
